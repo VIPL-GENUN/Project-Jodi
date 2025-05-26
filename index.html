@@ -120,7 +120,7 @@
     <!-- Banner -->
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
+          <div class="column is-full">
             <img src="static/images/banner.jpg" alt="banner"/>
           </div>
       </div>
@@ -136,12 +136,13 @@
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Visual generation and understanding are two deeply interconnected aspects of human intelligence, yet they have been traditionally treated as separate tasks in machine learning. In this paper, we propose Jodi, a diffusion framework that unifies visual generation and understanding by jointly modeling the image domain and multiple label domains. Specifically, Jodi is built upon a linear diffusion transformer along with a role switch mechanism, which enables it to perform three particular types of tasks: (1) joint generation, where the model simultaneously generates images and multiple labels; (2) controllable generation, where images are generated conditioned on any combination of labels; and (3) image perception, where multiple labels can be predicted at once from a given image. Furthermore, we present the Joint-1.6M dataset, which contains 200,000 high-quality images collected from public sources, automatic labels for 7 visual domains, and LLM-generated captions. Extensive experiments demonstrate that Jodi excels in both generation and understanding tasks and exhibits strong extensibility to a wider range of visual domains. Code is available at <a href="https://github.com/VIPL-GENUN/Jodi">https://github.com/VIPL-GENUN/Jodi</a>.
           </p>
+          <br/><img src="static/images/overview.png" alt="overview"/>
         </div>
       </div>
     </div>
@@ -149,43 +150,33 @@
 </section>
 <!-- End paper abstract -->
 
-<!-- Method -->
-<section class="hero">
-  <div class="hero-body">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Method</h2>
-        <div class="content has-text-justified">
-          <img src="static/images/overview.jpg" alt="overview"/>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-<!-- End method -->
 
 <!-- Image carousel -->
-<section class="hero is-light">
+<section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-full">
 
           <h2 class="title is-3">Results</h2>
 
-          <h2 class="title is-5" style="margin-bottom: -10px;"><strong>Joint Generation</strong>: p(x, y1, y2, ...)</h2>
+          <h2 class="title is-4" style="margin-bottom: -10px;"><strong>Joint Generation</strong>: p(<span style="color:#3e8494;">x,y1,y2,...</span>)</h2>
           <div id="results-carousel" class="carousel results-carousel" style="margin-bottom: 50px;">
             <div class="item">
-              <img src="static/images/joint-1.jpg" alt="joint-generation-1"/>
+              <img src="static/images/joint-1.jpg" alt="joint-1"/>
             </div>
             <div class="item">
-              <img src="static/images/joint-2.jpg" alt="joint-generation-2"/>
+              <img src="static/images/joint-2.jpg" alt="joint-2"/>
+            </div>
+            <div class="item">
+              <img src="static/images/joint-3.jpg" alt="joint-3"/>
+            </div>
+            <div class="item">
+              <img src="static/images/joint-4.jpg" alt="joint-4"/>
             </div>
           </div>
 
-          <h2 class="title is-5" style="margin-bottom: -10px;"><strong>Controllable Generation</strong>: p(x | y1, y2, ...)</h2>
+          <h2 class="title is-4" style="margin-bottom: -10px;"><strong>Controllable Generation</strong>: p(<span style="color:#3e8494;">x</span>|<span style="color:#b47700">y1,y2,...</span>)</h2>
           <div id="results-carousel" class="carousel results-carousel" style="margin-bottom: 50px;">
             <div class="item">
               <img src="static/images/control-depth.jpg" alt="control-depth"/>
@@ -207,13 +198,22 @@
             </div>
           </div>
 
-          <h2 class="title is-5" style="margin-bottom: -10px;"><strong>Image Perception</strong>: p(y1, y2, ... | x)</h2>
+          <h2 class="title is-4" style="margin-bottom: -10px;"><strong>Image Perception</strong>: p(<span style="color:#3e8494;">y1,y2,...</span>|<span style="color:#b47700">x</span>)</h2>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
-              <img src="static/images/percept-1.jpg" alt="image-perception-1"/>
+              <img src="static/images/percept-1.jpg" alt="percept-1"/>
             </div>
             <div class="item">
-              <img src="static/images/percept-2.jpg" alt="image-perception-2"/>
+              <img src="static/images/percept-2.jpg" alt="percept-2"/>
+            </div>
+            <div class="item">
+              <img src="static/images/percept-3.jpg" alt="percept-3"/>
+            </div>
+            <div class="item">
+              <img src="static/images/percept-4.jpg" alt="percept-4"/>
+            </div>
+            <div class="item">
+              <img src="static/images/percept-5.jpg" alt="percept-5"/>
             </div>
           </div>
 
@@ -225,11 +225,29 @@
 <!-- End image carousel -->
 
 
+<!-- Dataset -->
+<section class="hero is-light">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Jodi-1.6M Dataset</h2>
+        <div class="content has-text-justified">
+          We collect images with high quality and diversity from several publicly available sources, including <a href="https://huggingface.co/datasets/Yuanshi/Subjects200K_collection3">Subjects200K</a>, <a href="https://huggingface.co/datasets/zhang0jhon/Aesthetic-4K">Aesthetic-4K</a>, and <a href="https://huggingface.co/datasets/opendiffusionai/pexels-photos-janpf">Pexels</a>. All of these images have resolutions over 1024&times;1024, which is advantageous for training a high-resolution generative model. As these datasets lack labels, we use state-of-the-art predictors to automatically annotate the data with labels corresponding to 7 specific domains. Specifically, we employ <a href="https://github.com/carolineec/informative-drawings">Informative Drawings</a> to generate line arts, <a href="https://github.com/hellozhuo/pidinet">PiDiNet</a> to extract edge maps, <a href="https://github.com/DepthAnything/Depth-Anything-V2">Depth Anything V2</a> and <a href="https://github.com/EnVision-Research/Lotus">Lotus</a> to estimate depth maps, <a href="https://github.com/EnVision-Research/Lotus">Lotus</a> to estimate normal maps, <a href="https://github.com/zheng95z/rgbx">RGB2X</a> to estimate albedos, <a href="https://github.com/SHI-Labs/OneFormer">Oneformer</a> to predict segmentation colormaps, and <a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose">Openpose</a> to predict human skeletons. In this manner, we construct a dataset containing 200,000 images with corresponding 7&times;200,000 predicted labels.
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- End dataset -->
+
+
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3 has-text-centered">BibTex</h2>
         <pre><code>@TODO{
   TODO
